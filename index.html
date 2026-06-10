@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy Birthday My Love ❤️</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --pink: #ff4f9f;
+        --pink2: #ff7eb8;
+        --pink3: #ffd1e8;
+        --white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: linear-gradient(135deg, #ff9ac8, #ffc3df, #ffd8eb);
+        overflow-x: hidden;
+        color: white;
+      }
+
+      /* HEARTS */
+
+      .hearts {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .heart {
+        position: absolute;
+        bottom: -50px;
+        animation: float linear forwards;
+        opacity: 0.7;
+      }
+
+      @keyframes float {
+        to {
+          transform: translateY(-120vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* NAV */
+
+      nav {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 999;
+      }
+
+      .music-btn {
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        background: white;
+        color: var(--pink);
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      /* HERO */
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        padding: 50px;
+        border-radius: 35px;
+        max-width: 900px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .hero h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: clamp(4rem, 10vw, 8rem);
+        margin-bottom: 10px;
+      }
+
+      .hero h2 {
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        line-height: 1.8;
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 15px 35px;
+        background: white;
+        color: var(--pink);
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: 0.4s;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+      }
+
+      /* SECTION */
+
+      section {
+        padding: 100px 20px;
+      }
+
+      .title {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      /* COUNTDOWN */
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .box {
+        width: 130px;
+        height: 130px;
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(15px);
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box h3 {
+        font-size: 2rem;
+      }
+
+      /* GALLERY */
+
+      .gallery {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .polaroid {
+        background: white;
+        padding: 15px;
+        border-radius: 15px;
+        transform: rotate(-3deg);
+        transition: 0.4s;
+      }
+
+      .polaroid:nth-child(even) {
+        transform: rotate(3deg);
+      }
+
+      .polaroid:hover {
+        transform: scale(1.05);
+      }
+
+      .polaroid img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .polaroid p {
+        color: #555;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      /* TIMELINE */
+
+      .timeline {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .item {
+        margin-bottom: 30px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 25px;
+        border-radius: 20px;
+      }
+
+      /* ENVELOPE */
+
+      .envelope-wrap {
+        display: flex;
+        justify-content: center;
+      }
+
+      .envelope {
+        width: 320px;
+        height: 220px;
+        background: #ff5aa8;
+        position: relative;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+
+      .envelope:before {
+        content: "";
+        position: absolute;
+        border-left: 160px solid transparent;
+        border-right: 160px solid transparent;
+        border-top: 110px solid #ff7fbc;
+        top: 0;
+      }
+
+      .letter {
+        position: absolute;
+        background: white;
+        color: #444;
+        width: 90%;
+        height: 90%;
+        left: 5%;
+        bottom: 5%;
+        padding: 20px;
+        border-radius: 10px;
+        overflow: auto;
+        transform: translateY(80%);
+        transition: 1s;
+      }
+
+      .envelope.open .letter {
+        transform: translateY(-20%);
+      }
+
+      /* SURPRISE */
+
+      .surprise {
+        text-align: center;
+      }
+
+      .big-btn {
+        font-size: 80px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .message {
+        display: none;
+        font-size: 2rem;
+        margin-top: 20px;
+        animation: fade 1s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      footer {
+        padding: 50px;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 4rem;
+        }
+
+        .title {
+          font-size: 2rem;
+        }
+
+        .box {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="music" loop>
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <nav>
+      <button class="music-btn" id="musicBtn">🎵</button>
+    </nav>
+
+    <div class="hearts" id="hearts"></div>
+
+    <section class="hero">
+      <div class="glass">
+        <h1>Happy Birthday</h1>
+
+        <h2>NAMA_PACAR ❤️</h2>
+
+        <p>
+          Di hari spesial ini aku cuma ingin kamu tahu, betapa berartinya kamu
+          dalam hidupku. Terima kasih sudah menjadi alasan banyak senyumku.
+        </p>
+
+        <a href="#countdown" class="btn"> Mulai Cerita Kita 💖 </a>
+      </div>
+    </section>
+
+    <section id="countdown">
+      <h2 class="title">⏳ Waktu Bersama Kita</h2>
+
+      <div class="countdown">
+        <div class="box">
+          <h3 id="days">0</h3>
+          <span>Hari</span>
+        </div>
+
+        <div class="box">
+          <h3 id="hours">0</h3>
+          <span>Jam</span>
+        </div>
+
+        <div class="box">
+          <h3 id="minutes">0</h3>
+          <span>Menit</span>
+        </div>
+
+        <div class="box">
+          <h3 id="seconds">0</h3>
+          <span>Detik</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="title">📸 Kenangan Kita</h2>
+
+      <div class="gallery">
+        <div class="polaroid">
+          <img src="foto1.jpg" />
+          <p>Awal Kita ❤️</p>
+        </div>
+
+        <div class="polaroid">
+          <img src="foto2.jpg" />
+          <p>Momen Bahagia ✨</p>
+        </div>
+
+        <div class="polaroid">
+          <img src="foto3.jpg" />
+          <p>Tidak Terlupakan 🌸</p>
+        </div>
+
+        <div class="polaroid">
+          <img src="foto4.jpg" />
+          <p>Selamanya 💖</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="title">🎞️ Perjalanan Kita</h2>
+
+      <div class="timeline">
+        <div class="item">❤️ Pertama kali kenalan</div>
+
+        <div class="item">🌹 Pertama kali jalan bareng</div>
+
+        <div class="item">💍 Hari jadi kita</div>
+
+        <div class="item">🎂 Ulang tahunmu hari ini</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="title">💌 Surat Untukmu</h2>
+
+      <div class="envelope-wrap">
+        <div class="envelope" id="envelope">
+          <div class="letter">
+            <h3>Untuk Kamu ❤️</h3>
+
+            <br />
+
+            <p>
+              Terima kasih karena selalu hadir dan membuat hidupku lebih
+              berwarna. Aku berharap di umur yang baru ini, semua impianmu
+              tercapai dan kebahagiaan selalu menyertaimu. Aku sayang kamu hari
+              ini, besok, dan seterusnya. ❤️
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="title">🎁 Satu Kejutan Terakhir</h2>
+
+      <div class="surprise">
+        <button class="big-btn" id="gift">🎁</button>
+
+        <div class="message" id="msg">Aku Akan Selalu Memilih Kamu ❤️</div>
+      </div>
+    </section>
+
+    <footer>Made With Love ❤️</footer>
+
+    <script>
+      /* MUSIC */
+
+      const music = document.getElementById("music");
+      const btn = document.getElementById("musicBtn");
+
+      btn.onclick = () => {
+        if (music.paused) {
+          music.play();
+          btn.innerHTML = "🔊";
+        } else {
+          music.pause();
+          btn.innerHTML = "🎵";
+        }
+      };
+
+      /* HEARTS */
+
+      setInterval(() => {
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.innerHTML = ["💖", "💕", "❤️", "🌸"][
+          Math.floor(Math.random() * 4)
+        ];
+
+        heart.style.left = Math.random() * 100 + "%";
+
+        heart.style.fontSize = Math.random() * 25 + 20 + "px";
+
+        heart.style.animationDuration = Math.random() * 5 + 5 + "s";
+
+        document.getElementById("hearts").appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 10000);
+      }, 250);
+
+      /* ENVELOPE */
+
+      document
+        .getElementById("envelope")
+        .addEventListener("click", function () {
+          this.classList.toggle("open");
+        });
+
+      /* SURPRISE */
+
+      document.getElementById("gift").onclick = () => {
+        document.getElementById("msg").style.display = "block";
+
+        for (let i = 0; i < 40; i++) {
+          let h = document.createElement("div");
+
+          h.innerHTML = "💖";
+
+          h.style.position = "fixed";
+          h.style.left = Math.random() * 100 + "vw";
+          h.style.top = "100vh";
+          h.style.fontSize = "30px";
+
+          document.body.appendChild(h);
+
+          h.animate(
+            [
+              {
+                transform: "translateY(0)",
+              },
+              {
+                transform: "translateY(-120vh)",
+              },
+            ],
+            {
+              duration: 3000,
+            },
+          );
+
+          setTimeout(() => {
+            h.remove();
+          }, 3000);
+        }
+      };
+
+      /* LOVE TIMER */
+
+      const startDate = new Date("2024-01-01");
+
+      setInterval(() => {
+        const now = new Date();
+
+        const diff = now - startDate;
+
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor(diff / 3600000) % 24;
+        const minutes = Math.floor(diff / 60000) % 60;
+        const seconds = Math.floor(diff / 1000) % 60;
+
+        daysEl.textContent = days;
+        hoursEl.textContent = hours;
+        minutesEl.textContent = minutes;
+        secondsEl.textContent = seconds;
+      }, 1000);
+
+      const daysEl = document.getElementById("days");
+      const hoursEl = document.getElementById("hours");
+      const minutesEl = document.getElementById("minutes");
+      const secondsEl = document.getElementById("seconds");
+    </script>
+  </body>
+</html>
